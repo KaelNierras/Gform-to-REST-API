@@ -74,6 +74,7 @@
 ## Step 2: Convert Google Sheet Data to a Web API
 
 ### 2.1 Create a blank Google Sheet
+1. With Column Heading `First name`, `Second name`, `Favorite color` and `Favorite person` respectively.
    
 ### 2.2 Create a Google Apps Script for Google Sheet
 
