@@ -1,0 +1,17 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.people {
+    margin-top: 20px;
+}
+
+.person {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
