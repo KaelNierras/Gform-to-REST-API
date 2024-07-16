@@ -117,7 +117,6 @@
        // Return the JSON response
        return ContentService.createTextOutput(JSON.stringify({data: output})).setMimeType(ContentService.MimeType.JSON);
      } catch (error) {
-       Logger.log('Error in doGet: ' + error.message);
        return ContentService.createTextOutput(JSON.stringify({error: error.message})).setMimeType(ContentService.MimeType.JSON);
      }
    }
@@ -127,7 +126,6 @@
      // Log the change event for debugging
      Logger.log('Change detected: ' + JSON.stringify(e));
    
-     // Optionally call doGet or other functions
      try {
        var result = doGet(e);
        Logger.log(result.getContent());
@@ -136,22 +134,6 @@
      }
    }
    
-   // Example function to set up the trigger programmatically (optional)
-   function createTrigger() {
-     // Check if the trigger already exists and delete it
-     var triggers = ScriptApp.getProjectTriggers();
-     for (var i = 0; i < triggers.length; i++) {
-       if (triggers[i].getHandlerFunction() === 'onChange') {
-         ScriptApp.deleteTrigger(triggers[i]);
-       }
-     }
-   
-     // Create the new onChange trigger
-     ScriptApp.newTrigger('onChange')
-       .forSpreadsheet('1PBsRpwZ0wjrxt-ROfwoln0f9Ml6UqfUOtS8yAeTVPgY')  // Your Google Sheet ID
-       .onChange()
-       .create();
-   }
    ```
 
 ### 2.4 Set Up the Trigger
